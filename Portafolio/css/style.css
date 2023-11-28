@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*Comportamiento del scroll suave*/
+    scroll-behavior: smooth;
+    /*Variables colores*/
+    --orange: #FF7143;
+    --blue: #5454d4;
+
+}
+
+body{
+    font-family: 'Archivo', sans-serif;
+}
+
+.container{
+    width: 90%;
+    /*Tamaño maximo de la pagina*/
+    max-width: 1200px;
+    margin: 0 auto;
+    /*Si se sobrepasa el contenido se esconde*/
+    overflow: hidden;
+    /*Relleno de los lados*/
+    padding: 80px 0;
+}
+
+.container--hero{
+    padding: 0;
+}
+
+.hero_nav{
+    height: 80px;
+    /*Elementos uno del lado del otro*/
+    display: flex;
+    align-items: center;
+    /*Justificacion*/
+    justify-content: space-between;
+}
+
+.nav_menu{
+    background-color: var(--orange);
+    width: 35px;
+    /*Manita como cursor*/
+    cursor: pointer;
+    /*Se sobrepone a todo elemento */
+    z-index: 100;
+    border-radius: 5px;
+}
+
+.nav_list{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--blue);
+    padding: 80px 0;
+    display: grid;
+    /*Centra el contenido*/
+    place-content: center;
+    /*Alinia el texto al centro*/
+    text-align: center;
+    gap: 2.5rem;
+    /*Quita iconos de lista*/
+    list-style: none;
+    /*Esconde a la izquierda*/
+    transform: translate(-100%);
+    /*Tiempo en lo que esconde*/
+    transition: transform .3s;
+}
+
+.nav_list--show{
+    /*Muestra la lista*/
+    transform: translate(0);
+}
+
+.nav_link{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.hero_main{
+    /*Llenar espacio vacio*/
+    display: flex;
+    /*Trata elemento como columna*/
+    flex-direction: column;
+    gap: 40px;
+}
+
+.hero_figure{
+    /*Orden de la imagen cambiada*/
+    order: -1;
+    padding: 20px 0;
+}
+
+.hero_img{
+    width: 100%;
+    /*Trata este elemento como bloque*/
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hero_texts{
+    /*Hace el elemento como una cuadricula*/
+    display: grid;
+    gap: 1.5rem;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.hero_title{
+    font-size: 3rem;
+}
+
+.hero_paragraph{
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: .5rem;
+}
+
+.hero_cta{
+    background-color: var(--blue);
+    /*Color letra*/
+    color: #fff;
+    /*Le quita el subrayado*/
+    text-decoration: none;
+    padding: 1em 3em;
+    justify-self: center;
+    border-radius: 6px;
+}
+
+/* about */
+.about{
+    background-color: whitesmoke;
+}
+
+.about_container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about_img{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    /*Hace un cuadrado la imagen*/
+    aspect-ratio: 1/1;
+    max-width: 280px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+
+.about_texts{
+    text-align: center;
+    display: grid;
+    gap: 1.5rem;;
+}
+
+.subtitle{
+    text-align: center;
+    font-size: 2.1rem;
+}
+
+.paragraph{
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* learn */
+.learn_articles{
+    margin-top: 3rem;
+    display: grid;
+    gap: 3rem;
+}
+
+.learn_article{
+    text-align: center;
+    max-width: 500px;   
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.learn_img{
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
+    width: 60%;
+}
+
+/* sponsor */
+.sponsor{
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.sponsor_img{
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: block;
+}
+
+.sponsor_texts{
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.sponsor_cta{
+    background-color: var(--blue);
+    color: #fff;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    justify-self: center;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* estadisticas */
+.estadisticas{
+    /*Fondo con imagen y colores degradados*/
+    background-image: linear-gradient(#19181bc0, #171719e3),url(../assets/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+.estadisticas_container{
+    display: grid;
+    gap: 2.5rem;
+}
+
+.estadisticas_item{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.estadisticas_title{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.estadisticas_cta{
+    background-color: var(--orange);
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem 3rem;
+    justify-self: center;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* footer */
+.footer{
+    background-color: whitesmoke;
+}
+
+.footer_contact{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+}
+
+.footer_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /*Color que se tomara de las 3 variables de abajo*/
+    background-color: var(--color);
+}
+
+/*nth-of-type, Selecciona a los elementos de un grupo que coinciden con un patron
+En este caso los 3 colores que se usan para el footer*/
+.footer_item:nth-of-type(1){
+    --color: #1da1f2;
+}
+
+.footer_item:nth-of-type(2){
+    --color: #c32aa3;
+}
+
+.footer_item:nth-of-type(3){
+    --color: #ff0000;
+}
+
+.footer_img{
+    width: 28px;
+}
